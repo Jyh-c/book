@@ -8,5 +8,3 @@ CREATE TABLE `book`  (
   `CATEGORY` varchar(100),
   PRIMARY KEY (`BOOK_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
