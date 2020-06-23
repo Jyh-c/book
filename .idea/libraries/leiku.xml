@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="leiku">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../../../../application/Java/leiku" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../../../../application/Java/leiku" recursive="false" />
+  </library>
+</component>
