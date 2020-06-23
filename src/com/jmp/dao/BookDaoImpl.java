@@ -68,4 +68,11 @@ public class BookDaoImpl implements BookDao{
         return b;
     }
 
+    @Override
+    public List<Book> selectAll(int currentPage, int pageSize) throws SQLException {
+        String sql = rb.getString("book.sql.selectAllPage");
+        List<Book> list = qr.query(DBUtil.getConnection(),sql,new BeanListHandler<>(Book.class),((currentPage-1)*pageSize),pageSize);
+        return list;
+    }
+
 }

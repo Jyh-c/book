@@ -61,6 +61,11 @@
                 </tr>
             </c:forEach>
         </table>
+        ${null_err}
+        <div>
+            <a href="${pageContext.request.contextPath}/BookServlet?m=selectAll&pageUp=pageUp">上一页</a>
+            <a href="${pageContext.request.contextPath}/BookServlet?m=selectAll&pageDown=pageDown">下一页</a>
+        </div>
     </div>
 </body>
 </html>

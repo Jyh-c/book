@@ -3,6 +3,7 @@ package com.jmp.servlet;
 import com.jmp.pojo.Book;
 import com.jmp.service.BookService;
 import com.jmp.service.BookServiceImpl;
+import com.jmp.util.PageBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -86,17 +87,66 @@ public class BookServlet extends HttpServlet {
         }
     }
 
+    PageBean pb = new PageBean();
+    int pageUp = pb.getPage();
+    int pageDown = pb.getPage();
+
     private void selectAll(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
+        if("pageUp".equals(request.getParameter("pageUp"))){
+            System.out.println(request.getParameter("pageUp"));
+            pb.setPage(pb.getPage()-1);
+//            request.setAttribute("pageUp",pb.getPage());
+            if (pb.getPage() < 1){
+                pb.setPage(1);
+            }
+            try {
+                List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
+                request.setAttribute("bookList",booklist);
+                request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }else if("pageDown".equals(request.getParameter("pageDown"))){
+            System.out.println(request.getParameter("pageDown"));
+            pb.setPage(pb.getPage()+1);
+//            request.setAttribute("pageDown",pb.getPage());
+            try {
+                List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
+                request.setAttribute("bookList",booklist);
+                if ("".equals(booklist)){
+                    request.setAttribute("null_err","<h3>查询内容为空请返回上一页</h3>");
+                }
+                request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }else{
+//            request.setAttribute("pageUp",1);
+//            request.setAttribute("pageDown",2);
+            pb.setPage(1);
+            try {
+                List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
+                request.setAttribute("bookList",booklist);
+                request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+    }
+
+/*    private void selectAll(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Book>  booklist = bookService.selectAll();
+            List<Book>  booklist = bookService.selectAll(1,5);
             request.setAttribute("bookList",booklist);
             request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-    }
+    }*/
+
 
     private void bookInfo(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         String bookId = request.getParameter("book_id");

@@ -47,4 +47,5 @@ public interface BookDao {
     /**
      * 分页查询图书（后期添加 --- 使用default关键字）
      */
+    List<Book> selectAll(int currentPage,int pageSize) throws SQLException;
 }

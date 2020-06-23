@@ -47,4 +47,9 @@ public class BookServiceImpl implements BookService{
     public Book bookInfo(Book book) throws SQLException{
         return bookDao.bookInfo(book);
     }
+
+    @Override
+    public List<Book> selectAll(int currentPage, int pageSize) throws SQLException {
+        return bookDao.selectAll(currentPage,pageSize);
+    }
 }
