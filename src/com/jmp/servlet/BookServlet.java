@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+
 /**
  * @author JYH
  * @version 1.0
@@ -101,7 +102,7 @@ public class BookServlet extends HttpServlet {
                 pb.setPage(1);
             }
             try {
-                List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
+                List<Book> booklist = bookService.selectAll(pb.getPage(),5);
                 request.setAttribute("bookList",booklist);
                 request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
             } catch (SQLException throwables) {
