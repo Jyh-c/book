@@ -9,15 +9,22 @@ import java.util.ResourceBundle;
  * @date 2020/6/19 23:53
  */
 public class DBUtil {
+
+    //数据库连接地址
     private static final String URL;
+    //数据库用户名
     private static final String USERNAME;
+    //数据库密码
     private static final String PASSWORD;
+    //加载数据库连接驱动程序
     private static final String DRIVER;
 
     private DBUtil(){}
 
+    //加载数据库配置文件
     private static ResourceBundle rb = ResourceBundle.getBundle("com.jmp.util.db-config");
 
+    //加载数据库配置文件中的连接信息
     static{
         URL = rb.getString("jdbc.url");
         USERNAME = rb.getString("jdbc.username");
@@ -30,6 +37,7 @@ public class DBUtil {
         }
     }
 
+    //创建数据库连接
     public static Connection getConnection() {
         Connection con = null;
         try {
@@ -42,6 +50,7 @@ public class DBUtil {
         return con;
     }
 
+    //关闭数据库连接
     public static void close(ResultSet rs, Statement stat,Connection con) throws SQLException {
         if(rs != null){
             rs.close();
@@ -53,6 +62,7 @@ public class DBUtil {
         System.out.println("数据库连接已关闭！");
     }
 
+    //测试数据库连接
     public static void main(String[] args) {
         System.out.println(DBUtil.getConnection());
     }
