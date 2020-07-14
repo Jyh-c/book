@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title></title>
+    <title>欢迎使用图书管理系统</title>
   </head>
   <body>
   <div align="center">
