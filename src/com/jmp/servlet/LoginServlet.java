@@ -30,11 +30,8 @@ public class LoginServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         User user = null;
         user = userService.login(user_name,password);
-        if(user != null){
-            response.sendRedirect("/index.jsp");
-        }else{
-            request.setAttribute("error","<script>alter('登录失败！请检查账号密码。')</script>");
-            request.getRequestDispatcher("/login.jsp").forward(request,response);
-        }
+        request.getSession().setAttribute("user", user);
+        response.sendRedirect("/index.jsp");
+
     }
 }
