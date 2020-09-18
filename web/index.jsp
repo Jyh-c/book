@@ -2,14 +2,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>欢迎使用图书管理系统</title>
+    <title>图书管理系统-登录</title>
   </head>
   <body>
+  ${request.error}
   <div align="center">
-    <h3><a href="views/addbook.jsp">添加图书</a></h3>
-    <h3><a href="BookServlet?m=selectAll">查询所有图书</a></h3>
-    <h3><a href="views/blurrynamebook.jsp">图书名称关键字查询图书</a></h3>
-    <%--<h3><a href="views/updatebook.jsp">更新图书</a></h3>--%>
+    <form action="/login" method="post">
+      用户名：<input type="text" name="username">
+      <br>
+      密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password">
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="登录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="reset" value="重置" />
+    </form>
   </div>
   </body>
 </html>

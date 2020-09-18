@@ -52,8 +52,11 @@ public class BookServlet extends HttpServlet {
         String bookName = request.getParameter("book_name");
         String isbn = request.getParameter("isbn");
         String category = request.getParameter("category");
-        Book book = new Book(0,bookName,isbn,category);
-        System.out.println(book.toString());
+        Book book = new Book();
+        book.setBook_name(bookName);
+        book.setIsbn(isbn);
+        book.setCategory(category);
+       /* System.out.println(book.toString());*/
         try {
             bookService.add(book);
             selectAll(request,response);
