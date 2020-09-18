@@ -118,8 +118,9 @@ public class BookServlet extends HttpServlet {
             try {
                 List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
                 request.setAttribute("bookList",booklist);
-                if ("".equals(booklist)){
-                    request.setAttribute("null_err","<h3>查询内容为空请返回上一页</h3>");
+                System.out.println(booklist);
+                if (booklist.size() == 0){
+                    request.setAttribute("null_err","<font size=\"5\" color=\"red\"><b>查询内容为空，请返回上一页！</b></font>");
                 }
                 request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
             } catch (SQLException throwables) {

@@ -11,9 +11,9 @@ import java.io.IOException;
 /**
  * @author JYH
  * @version 1.0
- * @date 2020/9/18 21:20
+ * @date 2020/9/18 20:52
  */
-@WebFilter(filterName = "UserFilter")
+@WebFilter(filterName = "UserFilter",urlPatterns = "/*")
 public class UserFilter implements Filter {
     @Override
     public void destroy() {
@@ -24,11 +24,13 @@ public class UserFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
         User user = (User) request.getSession().getAttribute("user");
-        if(user != null){
+        String uri = request.getRequestURI();
+        if(uri.endsWith("/login")){
+            chain.doFilter(req, resp);
+        }else if(user != null){
             chain.doFilter(req, resp);
         }else{
-            request.setAttribute("error","<script>alter('登录失败！请检查账号密码。')</script>");
-            request.getRequestDispatcher("/login.jsp").forward(request,response);
+            request.getRequestDispatcher("/index.jsp").forward(request,response);
         }
 
     }

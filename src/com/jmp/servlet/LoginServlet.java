@@ -30,8 +30,12 @@ public class LoginServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         User user = null;
         user = userService.login(user_name,password);
-        request.getSession().setAttribute("user", user);
-        response.sendRedirect("/index.jsp");
-
+        if(user == null){
+            request.setAttribute("login", "<script>alert('请检查账号密码！！！');</script>");
+            request.getRequestDispatcher("/index.jsp").forward(request,response);
+        }else{
+            request.getSession().setAttribute("user", user);
+            request.getRequestDispatcher("/home.jsp").forward(request,response);
+        }
     }
 }

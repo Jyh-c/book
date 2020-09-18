@@ -3,9 +3,10 @@
 <html>
   <head>
     <title>图书管理系统-登录</title>
+    ${login}
   </head>
   <body>
-  ${request.error}
+
   <div align="center">
     <form action="/login" method="post">
       用户名：<input type="text" name="username">

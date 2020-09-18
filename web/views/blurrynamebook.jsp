@@ -34,7 +34,7 @@
 
         <form action="${pageContext.request.contextPath}/BookServlet?m=blurryname" method="post">
             <input type="text" name="blurryname"><input type="submit" value="搜索"><br><br>
-            <div id="index"><a href="/index.jsp">返回首页</a></div>
+            <div id="index"><a href="/home.jsp">返回首页</a></div>
             <table>
                 <tr>
                     <td>图书编号</td>
