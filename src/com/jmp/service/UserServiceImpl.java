@@ -2,12 +2,10 @@ package com.jmp.service;
 
 import com.jmp.pojo.User;
 import com.jmp.util.DBUtil;
-import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 /**
  * @author JYH
