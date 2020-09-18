@@ -8,3 +8,9 @@ CREATE TABLE `book`  (
   `CATEGORY` varchar(100),
   PRIMARY KEY (`BOOK_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# 数据表 user 结构如下
+CREATE TABLE `user` (
+  `USER_NAME` varchar(100),
+  `PASSWORD` varchar(100)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
