@@ -1,6 +1,6 @@
 package com.jmp.view;
 
-import com.jmp.pojo.Book;
+import com.jmp.model.Book;
 import com.jmp.service.BookService;
 import com.jmp.service.BookServiceImpl;
 

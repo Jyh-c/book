@@ -1,6 +1,6 @@
 package com.jmp.filter;
 
-import com.jmp.pojo.User;
+import com.jmp.model.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

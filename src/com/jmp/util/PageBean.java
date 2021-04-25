@@ -9,17 +9,25 @@ package com.jmp.util;
 
 public class PageBean {
 
-    private int page;// 页码
+    /**
+     * 页码
+     */
+    private int page;
 
-    private int rows;// 页大小
+    /**
+     * 每页条数
+     */
+    private int rows;
 
-    private int total;// 总记录数
+    /**
+     * 总数
+     */
+    private int total;
 
-    private boolean pagination = true;// 是否分页
-
-    public PageBean() {
-        super();
-    }
+    /**
+     * 是否分页
+     */
+    private boolean pagination = true;
 
     public int getPage() {
         return page;
@@ -59,7 +67,6 @@ public class PageBean {
 
     /**
      * 获得起始记录的下标
-     *
      * @return
      */
     public int getStartIndex() {

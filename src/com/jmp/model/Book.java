@@ -1,12 +1,12 @@
-package com.jmp.pojo;
+package com.jmp.model;
 
 /**
  * @author JYH
  * @version 1.0
  * @date 2020/6/19 23:50
  */
-
 public class Book {
+
     private int book_id;
     private String book_name;
     private String isbn;

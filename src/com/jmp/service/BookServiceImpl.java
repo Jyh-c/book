@@ -2,8 +2,7 @@ package com.jmp.service;
 
 import com.jmp.dao.BookDao;
 import com.jmp.dao.BookDaoImpl;
-import com.jmp.pojo.Book;
-import lombok.Data;
+import com.jmp.model.Book;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -13,7 +12,6 @@ import java.util.List;
  * @version 1.0
  * @date 2020/6/20 1:37
  */
-@Data
 public class BookServiceImpl implements BookService{
 
     BookDao bookDao = new BookDaoImpl();
@@ -52,4 +50,5 @@ public class BookServiceImpl implements BookService{
     public List<Book> selectAll(int currentPage, int pageSize) throws SQLException {
         return bookDao.selectAll(currentPage,pageSize);
     }
+
 }

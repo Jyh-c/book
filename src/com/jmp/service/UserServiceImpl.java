@@ -1,9 +1,8 @@
 package com.jmp.service;
 
-import com.jmp.pojo.User;
-import com.jmp.util.DBUtil;
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
+import com.jmp.dao.UserDao;
+import com.jmp.dao.UserDaoImpl;
+import com.jmp.model.User;
 
 import java.sql.SQLException;
 
@@ -14,23 +13,10 @@ import java.sql.SQLException;
  */
 public class UserServiceImpl implements UserService {
 
-    //查询运行器
-    static QueryRunner qr = null;
-
-    public UserServiceImpl(){
-        //创建BookDaoImpl对象时加载QueryRunner
-        qr = new QueryRunner();
-    }
+    UserDao userDao = new UserDaoImpl();
 
     @Override
-    public User login(String user_name, String password) {
-        User user = null;
-        String sql = "select * from user where user_name = ? and password = ?";
-        try {
-            user = qr.query(DBUtil.getConnection(),sql,new BeanHandler<>(User.class),user_name,password);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return user;
+    public User login(String user_name, String password) throws SQLException {
+        return userDao.login(user_name,password);
     }
 }

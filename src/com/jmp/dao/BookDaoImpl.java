@@ -1,8 +1,7 @@
 package com.jmp.dao;
 
-import com.jmp.pojo.Book;
+import com.jmp.model.Book;
 import com.jmp.util.DBUtil;
-import lombok.Data;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -16,12 +15,16 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @date 2020/6/20 0:41
  */
-@Data
 public class BookDaoImpl implements BookDao{
 
-    //查询运行器
+    /**
+     * 查询运行器
+     */
     static QueryRunner qr = null;
-    //加载sql文件
+
+    /**
+     * 加载sql文件
+     */
     static ResourceBundle rb = ResourceBundle.getBundle("com.jmp.dao.book-sql");
 
     public BookDaoImpl(){
