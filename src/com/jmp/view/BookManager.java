@@ -98,19 +98,15 @@ public class BookManager {
         book.setBook_id(id);
         try {
             book = bookService.bookInfo(book);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println(book.toString());
-        System.out.println("请重新输入图书的信息：");
-        System.out.println("图书名称：");
-        String name = sc.next();
-        System.out.println("ISBN编号：");
-        String isbn = sc.next();
-        System.out.println("图书类别：");
-        String category = sc.next();
-        book = new Book(id,name,isbn,category);
-        try {
+            System.out.println(book.toString());
+            System.out.println("请重新输入图书的信息：");
+            System.out.println("图书名称：");
+            String name = sc.next();
+            System.out.println("ISBN编号：");
+            String isbn = sc.next();
+            System.out.println("图书类别：");
+            String category = sc.next();
+            book = new Book(id,name,isbn,category);
             bookService.update(book);
             System.out.println("修改成功！---------------");
         } catch (SQLException e) {
