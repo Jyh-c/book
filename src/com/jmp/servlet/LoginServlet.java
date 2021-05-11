@@ -2,7 +2,7 @@ package com.jmp.servlet;
 
 import com.jmp.model.User;
 import com.jmp.service.UserService;
-import com.jmp.service.UserServiceImpl;
+import com.jmp.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,5 +1,6 @@
-package com.jmp.dao;
+package com.jmp.dao.impl;
 
+import com.jmp.dao.BookDao;
 import com.jmp.model.Book;
 import com.jmp.util.DBUtil;
 import org.apache.commons.dbutils.QueryRunner;
@@ -15,7 +16,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @date 2020/6/20 0:41
  */
-public class BookDaoImpl implements BookDao{
+public class BookDaoImpl implements BookDao {
 
     /**
      * 查询运行器

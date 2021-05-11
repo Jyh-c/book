@@ -1,8 +1,9 @@
-package com.jmp.service;
+package com.jmp.service.impl;
 
 import com.jmp.dao.BookDao;
-import com.jmp.dao.BookDaoImpl;
+import com.jmp.dao.impl.BookDaoImpl;
 import com.jmp.model.Book;
+import com.jmp.service.BookService;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  * @version 1.0
  * @date 2020/6/20 1:37
  */
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
 
     BookDao bookDao = new BookDaoImpl();
 

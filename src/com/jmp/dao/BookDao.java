@@ -45,6 +45,7 @@ public interface BookDao {
      * 根据书名模糊查询
      * @param book
      * @throws SQLException
+     * @return
      */
     List<Book> blurryName(Book book) throws SQLException;
 
@@ -61,6 +62,7 @@ public interface BookDao {
      * @param currentPage
      * @param pageSize
      * @throws SQLException
+     * @return
      */
     List<Book> selectAll(int currentPage,int pageSize) throws SQLException;
 

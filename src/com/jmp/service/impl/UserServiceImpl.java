@@ -1,8 +1,9 @@
-package com.jmp.service;
+package com.jmp.service.impl;
 
 import com.jmp.dao.UserDao;
-import com.jmp.dao.UserDaoImpl;
+import com.jmp.dao.impl.UserDaoImpl;
 import com.jmp.model.User;
+import com.jmp.service.UserService;
 
 import java.sql.SQLException;
 

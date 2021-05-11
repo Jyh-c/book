@@ -2,7 +2,7 @@ package com.jmp.view;
 
 import com.jmp.model.Book;
 import com.jmp.service.BookService;
-import com.jmp.service.BookServiceImpl;
+import com.jmp.service.impl.BookServiceImpl;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -1,5 +1,6 @@
-package com.jmp.dao;
+package com.jmp.dao.impl;
 
+import com.jmp.dao.UserDao;
 import com.jmp.model.User;
 import com.jmp.util.DBUtil;
 import org.apache.commons.dbutils.QueryRunner;
@@ -13,7 +14,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @date 2020/6/20 0:41
  */
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
 
     /**
      * 查询运行器

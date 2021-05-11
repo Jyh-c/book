@@ -2,7 +2,7 @@ package com.jmp.servlet;
 
 import com.jmp.model.Book;
 import com.jmp.service.BookService;
-import com.jmp.service.BookServiceImpl;
+import com.jmp.service.impl.BookServiceImpl;
 import com.jmp.util.PageBean;
 
 import javax.servlet.annotation.WebServlet;
