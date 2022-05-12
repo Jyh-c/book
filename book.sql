@@ -1,4 +1,6 @@
 # 数据库名称：book
+create database book;
+use book;
 
 # 数据表 book 结构如下
 CREATE TABLE `book`  (
