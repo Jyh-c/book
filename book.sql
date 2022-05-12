@@ -18,4 +18,4 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 # 向user表中插入数据，用于登录
-insert into user values ('root','123456');
+insert into user values ('admin','123456');
