@@ -17,7 +17,7 @@ GitHub仓库地址<br>
 ## 登录的账号、密码在user表中自行设置[默认：admin，123456]
 
 遇到问题可加群反馈 ↓ ↓ ↓ <br>
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=FLbEoX09fbxAiXG0nKeTAz8b08B3vRpm&jump_from=webapi"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="二师兄的好朋友群👏" title="二师兄的好朋友群👏"></a><br>
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=FLbEoX09fbxAiXG0nKeTAz8b08B3vRpm&jump_from=webapi">二师兄的好朋友群👏</a><br>
 
 src目录下可单独运行BookManager.java进行控制台 图书实体 的增删改查<br>
 PS：servlet和filter包可不使用<br>
