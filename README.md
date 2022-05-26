@@ -22,4 +22,4 @@ GitHub仓库地址<br>
 src目录下可单独运行BookManager.java进行控制台 图书实体 的增删改查<br>
 PS：servlet和filter包可不使用<br>
 运行基础环境软件以及项目所使用的的jar包需要自行下载配置<br>
-项目所用 jar 包网盘下载地址【提取码：1234】[https://pan.baidu.com/s/1I61O2JFpHkBp-j8ektWZ3w](https://pan.baidu.com/s/1I61O2JFpHkBp-j8ektWZ3w)
+项目所用 jar 包下载地址【提取码：1234】[https://pan.baidu.com/s/1I61O2JFpHkBp-j8ektWZ3w](https://pan.baidu.com/s/1I61O2JFpHkBp-j8ektWZ3w)
