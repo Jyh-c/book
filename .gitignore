@@ -1,1 +1,4 @@
+/.idea/
 /out/
+/src/com/jmp/dao/BaseDao.java
+/src/com/jmp/dao/TestDao.java
