@@ -14,7 +14,7 @@
       密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password">
       <br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="登录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="views/addUser.jsp"><button type="button">注册</button></a>
+      <a href="/views/addUser.jsp"><button type="button">注册</button></a>
     </form>
   </div>
   ${result}
