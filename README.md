@@ -16,10 +16,11 @@ GitHub仓库地址<br>
  - 运行项目
 ## 登录的账号、密码可使用注册功能注册
 
+**项目所用 jar 包在群文件中** ↓ ↓ ↓ <br>
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=FLbEoX09fbxAiXG0nKeTAz8b08B3vRpm&jump_from=webapi">二师兄的好朋友群👏</a><br>
 遇到问题可加群反馈 ↓ ↓ ↓ <br>
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=FLbEoX09fbxAiXG0nKeTAz8b08B3vRpm&jump_from=webapi">二师兄的好朋友群👏</a><br>
 
 src目录下可单独运行BookManager.java进行控制台 图书实体 的增删改查<br>
 PS：servlet和filter包可不使用<br>
 运行基础环境软件以及项目所使用的的jar包需要自行下载配置<br>
-项目所用 jar 包下载地址【提取码：1234】[https://pan.baidu.com/s/1I61O2JFpHkBp-j8ektWZ3w](https://pan.baidu.com/s/1I61O2JFpHkBp-j8ektWZ3w)
