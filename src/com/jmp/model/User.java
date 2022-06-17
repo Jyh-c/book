@@ -8,6 +8,7 @@ package com.jmp.model;
 public class User {
 
     private String user_name;
+
     private String password;
 
     public User() {

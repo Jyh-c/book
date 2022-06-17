@@ -27,14 +27,14 @@ public class UserDaoImpl implements UserDao {
     static ResourceBundle rb = ResourceBundle.getBundle("com.jmp.dao.book-sql");
 
     public UserDaoImpl(){
-        //创建BookDaoImpl对象时加载QueryRunner
+        // 创建BookDaoImpl对象时加载QueryRunner
         qr = new QueryRunner();
     }
 
     @Override
     public User login(String user_name, String password) throws SQLException{
         String sql = rb.getString("user.sql.login");
-        User user = qr.query(DBUtil.getConnection(),sql,new BeanHandler<>(User.class),user_name,password);
+        User user = qr.query(DBUtil.getConnection(), sql, new BeanHandler<>(User.class), user_name,password);
         return user;
     }
 }

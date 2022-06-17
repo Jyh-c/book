@@ -25,28 +25,28 @@ public class BookServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String m = request.getParameter("m");
         if ("add".equals(m)){
-            add(request,response);
+            add(request, response);
         }else if("update".equals(m)){
-            update(request,response);
+            update(request, response);
         }else if("delete".equals(m)){
-            delete(request,response);
+            delete(request, response);
         }else if("selectAll".equals(m)){
-            selectAll(request,response);
+            selectAll(request, response);
         }else if("bookInfo".equals(m)){
-            bookInfo(request,response);
+            bookInfo(request, response);
         }else if ("blurryname".equals(m)){
             bookBlurryName(request, response);
         }
     }
 
-    private void add(HttpServletRequest request,HttpServletResponse response) {
+    private void add(HttpServletRequest request, HttpServletResponse response) {
         String bookName = request.getParameter("book_name");
         String isbn = request.getParameter("isbn");
         String category = request.getParameter("category");
@@ -56,61 +56,61 @@ public class BookServlet extends HttpServlet {
         book.setCategory(category);
         try {
             bookService.add(book);
-            selectAll(request,response);
+            selectAll(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void update(HttpServletRequest request,HttpServletResponse response) {
+    private void update(HttpServletRequest request, HttpServletResponse response) {
         String bookId = request.getParameter("book_id");
         String bookName = request.getParameter("book_name");
         String isbn = request.getParameter("isbn");
         String category = request.getParameter("category");
-        Book book = new Book(Integer.parseInt(bookId),bookName,isbn,category);
+        Book book = new Book(Integer.parseInt(bookId), bookName, isbn, category);
         try {
             bookService.update(book);
-            selectAll(request,response);
+            selectAll(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void delete(HttpServletRequest request,HttpServletResponse response){
+    private void delete(HttpServletRequest request, HttpServletResponse response){
         String bookId = request.getParameter("book_id");
         Book book = new Book();
         book.setBook_id(Integer.parseInt(bookId));
         try {
             bookService.delete(book);
-            selectAll(request,response);
+            selectAll(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void selectAll(HttpServletRequest request,HttpServletResponse response) {
+    private void selectAll(HttpServletRequest request, HttpServletResponse response) {
         try {
             if("pageUp".equals(request.getParameter("pageUp"))){
-                pb.setPage(pb.getPage()-1);
+                pb.setPage(pb.getPage() - 1);
                 if (pb.getPage() < 1){
                     pb.setPage(1);
                 }
                 List<Book> booklist = bookService.selectAll(pb.getPage(),5);
-                request.setAttribute("bookList",booklist);
-                request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
+                request.setAttribute("bookList", booklist);
+                request.getRequestDispatcher("/views/booklist.jsp").forward(request, response);
             }else if("pageDown".equals(request.getParameter("pageDown"))){
                 pb.setPage(pb.getPage()+1);
                 List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
                 request.setAttribute("bookList",booklist);
                 if (booklist.size() == 0){
-                    request.setAttribute("null_err","<font size=\"5\" color=\"red\"><b>查询内容为空，请返回上一页！</b></font>");
+                    request.setAttribute("null_err", "<font size=\"5\" color=\"red\"><b>查询内容为空，请返回上一页！</b></font>");
                 }
-                request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
+                request.getRequestDispatcher("/views/booklist.jsp").forward(request, response);
             }else{
                 pb.setPage(1);
-                List<Book>  booklist = bookService.selectAll(pb.getPage(),5);
-                request.setAttribute("bookList",booklist);
-                request.getRequestDispatcher("/views/booklist.jsp").forward(request,response);
+                List<Book>  booklist = bookService.selectAll(pb.getPage(), 5);
+                request.setAttribute("bookList", booklist);
+                request.getRequestDispatcher("/views/booklist.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -118,7 +118,7 @@ public class BookServlet extends HttpServlet {
 
     }
     
-    private void bookInfo(HttpServletRequest request,HttpServletResponse response) {
+    private void bookInfo(HttpServletRequest request, HttpServletResponse response) {
         String bookId = request.getParameter("book_id");
         Book book = new Book();
         book.setBook_id(Integer.parseInt(bookId));
@@ -131,14 +131,14 @@ public class BookServlet extends HttpServlet {
         }
     }
 
-    private void bookBlurryName(HttpServletRequest request,HttpServletResponse response){
+    private void bookBlurryName(HttpServletRequest request, HttpServletResponse response){
         String keyName = request.getParameter("blurryname");
         Book book = new Book();
         book.setBook_name(keyName);
         try {
             List<Book> bookblurryList = bookService.blurryName(book);
             request.setAttribute("bookblurryList",bookblurryList);
-            request.getRequestDispatcher("/views/blurrynamebook.jsp").forward(request,response);
+            request.getRequestDispatcher("/views/blurrynamebook.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

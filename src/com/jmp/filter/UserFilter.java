@@ -13,11 +13,8 @@ import java.io.IOException;
  * @version 1.0
  * @date 2020/9/18 20:52
  */
-@WebFilter(filterName = "UserFilter",urlPatterns = "/*")
+@WebFilter(filterName = "UserFilter", urlPatterns = "/*")
 public class UserFilter implements Filter {
-    @Override
-    public void destroy() {
-    }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
@@ -30,13 +27,8 @@ public class UserFilter implements Filter {
         }else if(user != null){
             chain.doFilter(req, resp);
         }else{
-            request.getRequestDispatcher("/index.jsp").forward(request,response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
-
-    }
-
-    @Override
-    public void init(FilterConfig config) throws ServletException {
 
     }
 

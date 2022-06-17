@@ -60,7 +60,7 @@ public class BookManager {
         String isbn = sc.next();
         System.out.println("图书类别：");
         String category = sc.next();
-        Book book = new Book(0,name,isbn,category);
+        Book book = new Book(0, name, isbn, category);
         try {
             bookService.add(book);
             System.out.println("增加成功！---------------\n");
@@ -106,7 +106,7 @@ public class BookManager {
             String isbn = sc.next();
             System.out.println("图书类别：");
             String category = sc.next();
-            book = new Book(id,name,isbn,category);
+            book = new Book(id, name, isbn, category);
             bookService.update(book);
             System.out.println("修改成功！---------------");
         } catch (SQLException e) {

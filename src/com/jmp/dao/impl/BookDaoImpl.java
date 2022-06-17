@@ -29,53 +29,53 @@ public class BookDaoImpl implements BookDao {
     static ResourceBundle rb = ResourceBundle.getBundle("com.jmp.dao.book-sql");
 
     public BookDaoImpl(){
-        //创建BookDaoImpl对象时加载QueryRunner
+        // 创建BookDaoImpl对象时加载QueryRunner
         qr = new QueryRunner();
     }
 
     @Override
     public List<Book> selectAll() throws SQLException {
         String sql = rb.getString("book.sql.selectAll");
-        List<Book> list = qr.query(DBUtil.getConnection(),sql,new BeanListHandler<Book>(Book.class));
+        List<Book> list = qr.query(DBUtil.getConnection(), sql, new BeanListHandler<>(Book.class));
         return list;
     }
 
     @Override
     public void add(Book book) throws SQLException {
         String sql = rb.getString("book.sql.add");
-        qr.update(DBUtil.getConnection(),sql,book.getBook_name(),book.getIsbn(),book.getCategory());
+        qr.update(DBUtil.getConnection(), sql, book.getBook_name(), book.getIsbn(), book.getCategory());
     }
 
     @Override
     public void update(Book book) throws SQLException {
         String sql = rb.getString("book.sql.update");
-        qr.update(DBUtil.getConnection(),sql,book.getBook_name(),book.getIsbn(),book.getCategory(),book.getBook_id());
+        qr.update(DBUtil.getConnection(), sql, book.getBook_name(), book.getIsbn(), book.getCategory(), book.getBook_id());
     }
 
     @Override
     public void delete(Book book) throws SQLException {
         String sql = rb.getString("book.sql.delete");
-        qr.update(DBUtil.getConnection(),sql,book.getBook_id());
+        qr.update(DBUtil.getConnection(), sql, book.getBook_id());
     }
 
     @Override
     public List<Book> blurryName(Book book) throws SQLException {
         String sql = rb.getString("book.sql.blurryName");
-        List<Book> list = qr.query(DBUtil.getConnection(),sql,new BeanListHandler<Book>(Book.class),"%"+book.getBook_name()+"%");
+        List<Book> list = qr.query(DBUtil.getConnection(), sql, new BeanListHandler<>(Book.class), "%" + book.getBook_name() + "%");
         return list;
     }
 
     @Override
     public Book bookInfo(Book book) throws SQLException{
         String sql = rb.getString("book.sql.deleteBook");
-        Book b = qr.query(DBUtil.getConnection(),sql,new BeanHandler<Book>(Book.class),book.getBook_id());
+        Book b = qr.query(DBUtil.getConnection(), sql, new BeanHandler<>(Book.class), book.getBook_id());
         return b;
     }
 
     @Override
     public List<Book> selectAll(int currentPage, int pageSize) throws SQLException {
         String sql = rb.getString("book.sql.selectAllPage");
-        List<Book> list = qr.query(DBUtil.getConnection(),sql,new BeanListHandler<>(Book.class),((currentPage-1)*pageSize),pageSize);
+        List<Book> list = qr.query(DBUtil.getConnection(), sql, new BeanListHandler<>(Book.class), ((currentPage-1) * pageSize), pageSize);
         return list;
     }
 

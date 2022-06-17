@@ -43,6 +43,7 @@ public interface BookService {
     /**
      * 根据书名模糊查询
      * @param book
+     * @return
      * @throws SQLException
      */
     List<Book> blurryName(Book book) throws SQLException;
@@ -50,8 +51,8 @@ public interface BookService {
     /**
      * 获取具体的图书信息
      * @param book
-     * @throws SQLException
      * @return
+     * @throws SQLException
      */
     Book bookInfo(Book book) throws SQLException;
 

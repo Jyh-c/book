@@ -49,7 +49,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> selectAll(int currentPage, int pageSize) throws SQLException {
-        return bookDao.selectAll(currentPage,pageSize);
+        return bookDao.selectAll(currentPage, pageSize);
     }
 
 }

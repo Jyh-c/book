@@ -17,14 +17,11 @@ import java.io.IOException;
 )
 public class CharacterEncodingFilter implements Filter {
     private String characterEncoding;
-    @Override
-    public void destroy() {
-    }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        System.out.println("characterEncoding="+characterEncoding);
-        if(null!=characterEncoding) {
+        System.out.println("characterEncoding=" + characterEncoding);
+        if(null != characterEncoding) {
             req.setCharacterEncoding(characterEncoding);
             resp.setCharacterEncoding(characterEncoding);
         }
@@ -32,7 +29,7 @@ public class CharacterEncodingFilter implements Filter {
     }
 
     @Override
-    public void init(FilterConfig config) throws ServletException {
+    public void init(FilterConfig config) {
         characterEncoding = config.getInitParameter("characterEncoding");
     }
 

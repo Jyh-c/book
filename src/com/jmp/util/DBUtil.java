@@ -58,8 +58,8 @@ public class DBUtil {
         Connection con = null;
         try {
             con = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
             System.out.println("数据库连接失败，请检查数据库地址、用户名、密码是否存在错误！！！");
         }
         return con;
@@ -73,11 +73,13 @@ public class DBUtil {
      * @throws SQLException
      */
     public static void close(ResultSet rs, Statement stat,Connection con) throws SQLException {
-        if(rs != null){
+        if (rs != null){
             rs.close();
-        }if(stat != null){
+        }
+        if (stat != null){
             rs.close();
-        }if(con != null){
+        }
+        if (con != null){
             rs.close();
         }
         System.out.println("数据库连接已关闭！");

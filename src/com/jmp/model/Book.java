@@ -8,8 +8,11 @@ package com.jmp.model;
 public class Book {
 
     private int book_id;
+
     private String book_name;
+
     private String isbn;
+
     private  String category;
 
     public Book() {

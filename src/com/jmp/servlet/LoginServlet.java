@@ -22,22 +22,22 @@ public class LoginServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         doGet(request, response);
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         String user_name = request.getParameter("username");
         String password = request.getParameter("password");
         try{
-            User user = userService.login(user_name,password);
+            User user = userService.login(user_name, password);
             if(user == null){
                 request.setAttribute("login", "<script>alert('请检查账号密码！！！');</script>");
-                request.getRequestDispatcher("/index.jsp").forward(request,response);
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
             }else{
                 request.getSession().setAttribute("user", user);
-                request.getRequestDispatcher("/home.jsp").forward(request,response);
+                request.getRequestDispatcher("/home.jsp").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
