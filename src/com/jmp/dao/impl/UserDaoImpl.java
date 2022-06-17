@@ -37,4 +37,11 @@ public class UserDaoImpl implements UserDao {
         User user = qr.query(DBUtil.getConnection(), sql, new BeanHandler<>(User.class), user_name,password);
         return user;
     }
+
+    @Override
+    public void add(User user) throws SQLException {
+        String sql = rb.getString("user.sql.add");
+        qr.update(DBUtil.getConnection(), sql, user.getUser_name(), user.getPassword());
+    }
+
 }

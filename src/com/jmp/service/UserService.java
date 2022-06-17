@@ -20,4 +20,11 @@ public interface UserService {
      */
     User login(String user_name,String password) throws SQLException;
 
+    /**
+     * 添加用户
+     * @param user
+     * @throws SQLException
+     */
+    void add(User user) throws SQLException;
+
 }

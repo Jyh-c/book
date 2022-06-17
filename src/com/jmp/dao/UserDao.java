@@ -15,9 +15,17 @@ public interface UserDao {
     /**
      * 登录-验证用户名密码
      * @param user_name
-     * @return
      * @param password
+     * @return
+     * @throws SQLException
      */
     User login(String user_name, String password) throws SQLException;
+
+    /**
+     * 添加用户
+     * @param user
+     * @throws SQLException
+     */
+    void add(User user) throws SQLException;
 
 }

@@ -20,4 +20,9 @@ public class UserServiceImpl implements UserService {
     public User login(String user_name, String password) throws SQLException {
         return userDao.login(user_name, password);
     }
+
+    @Override
+    public void add(User user) throws SQLException {
+        userDao.add(user);
+    }
 }
