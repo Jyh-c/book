@@ -14,7 +14,7 @@ GitHub仓库地址<br>
  - 运行 DBUtil 类的 main 方法，确保数据库可以连接成功
  - 配置Tomcat运行环境 [点这里，按照步骤配置](https://blog.csdn.net/weixin_44580492/article/details/107335967)
  - 运行项目
-## 登录的账号、密码在user表中自行设置[默认：admin，123456]
+## 登录的账号、密码可使用注册功能注册
 
 遇到问题可加群反馈 ↓ ↓ ↓ <br>
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=FLbEoX09fbxAiXG0nKeTAz8b08B3vRpm&jump_from=webapi">二师兄的好朋友群👏</a><br>
