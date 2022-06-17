@@ -17,7 +17,7 @@ import java.util.List;
  * @version 1.0
  * @date 2020/6/20 22:10
  */
-@WebServlet(name = "BookServlet",urlPatterns = "/BookServlet")
+@WebServlet(name = "BookServlet", urlPatterns = "/BookServlet")
 public class BookServlet extends HttpServlet {
 
     BookService bookService = new BookServiceImpl();

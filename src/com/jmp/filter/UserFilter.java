@@ -22,7 +22,7 @@ public class UserFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
         User user = (User) request.getSession().getAttribute("user");
         String uri = request.getRequestURI();
-        if(uri.endsWith("/login") || uri.endsWith("addUser.jsp")){
+        if(uri.endsWith("/login") || uri.endsWith("/addUser.jsp") || uri.endsWith("/UserServlet")){
             chain.doFilter(req, resp);
         }else if(user != null){
             chain.doFilter(req, resp);

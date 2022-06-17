@@ -16,7 +16,7 @@ import java.io.IOException;
  * @version 1.0
  * @date 2020/9/18 20:52
  */
-@WebServlet(name = "LoginServlet",urlPatterns = "/login")
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
     UserService userService = new UserServiceImpl();

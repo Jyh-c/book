@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  * @date 2020/6/20 22:10
  */
-@WebServlet(name = "UserServlet",urlPatterns = "/UserServlet")
+@WebServlet(name = "UserServlet", urlPatterns = "/UserServlet")
 public class UserServlet extends HttpServlet {
 
     UserService userService = new UserServiceImpl();
