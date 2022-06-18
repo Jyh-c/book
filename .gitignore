@@ -1,3 +1,12 @@
+# Default ignored files
+/.idea/shelf/
+/.idea/workspace.xml
+# Datasource local storage ignored files
+/.idea/dataSources/
+/.idea/dataSources.local.xml
+# Editor-based HTTP Client requests
+/.idea/httpRequests/
+
 /out/
 /src/com/jmp/dao/BaseDao.java
 /src/com/jmp/dao/TestDao.java
